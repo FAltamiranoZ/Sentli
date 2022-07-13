@@ -1,6 +1,4 @@
 # SPDX-License-Identifier: Apache-2.0
-#
-
 # Iroha python library consists of 3 parts: Iroha, IrohaCrypto and IrohaGrpc
 import os
 import binascii
@@ -13,40 +11,10 @@ import sys
 if sys.version_info[0] < 3:
     raise Exception('Python 3 or a more recent version is required.')
 
-# Connection to Iroha network. It uses the address and port of the node it wishes to send the transaction to.
 IROHA_HOST_ADDR = os.getenv('IROHA_HOST_ADDR', '192.168.1.83')
 IROHA_PORT = os.getenv('IROHA_PORT', '50051')
-#IROHA_HOST_ADDR = os.getenv('IROHA_HOST_ADDR', '201.137.130.149')
-#IROHA_PORT = os.getenv('IROHA_PORT', '50051')
+
 net = IrohaGrpc('{}:{}'.format(IROHA_HOST_ADDR, IROHA_PORT))
-
-# Here we retrieve the admin@domain account created on the genesis block, we need it to create the iroha object for this account.
-# os.getenv(par1, par2) gets the value of par1, if it doesnt exist, then it assigns the value of par2. This is why we use os.getenv insted of: ADMIN_ACCOUNT_ID = 'admin@domain'
-ADMIN_ACCOUNT_ID = os.getenv('ADMIN_ACCOUNT_ID', 'admin@domain')
-
-# This creates a new private key
-# print(IrohaCrypto.private_key())
-ADMIN_PRIVATE_KEY = os.getenv(
-    'ADMIN_PRIVATE_KEY', 'f101537e319568c765b2cc89698325604991dca57b9716b58016b253506cab70')
-
-# The Iroha object allows us to use the Iroha library commands. Each account must have and use its own Iroha object
-iroha = Iroha(ADMIN_ACCOUNT_ID)
-
-# Here we created a key with the IrohaCrypto.private_key() method and we will assign it to user as a default value for testing
-# We are not creating any user here, just creating the keys.
-# To create a user, only the public key is needed, the private key will only be used to sign transactions.
-# print(IrohaCrypto.private_key())
-user_private_key = os.getenv(
-    'user_private_key', '622e124e078333c58c644f5d107ac8a5c0002aeee222104411355ab10fc0faa8')
-user_private_key2 = os.getenv(
-    'user_private_key2', '116eac80e88983cabb0b47bcf2be1c0a25222e6aa30ec43bd5dcc3144eaf4c60')
-money_administrator_private_key = os.getenv(
-    'money_administrator_private_key', '61c8067b64855de16e56504b316d06c64652faf1f83cabc8684887cd2682ccc4')
-
-# The derived public key of a private key is always the same.
-user_public_key = IrohaCrypto.derive_public_key(user_private_key)
-user_public_key2 = IrohaCrypto.derive_public_key(user_private_key2)
-money_administrator_public_key = IrohaCrypto.derive_public_key(money_administrator_private_key)
 
 # -------------------------------------------------------------------------------------------
 # The following functions are used for tracking.
@@ -81,6 +49,9 @@ def send_transaction_and_print_status(transaction):
 
 # -------------------------------------------------------------------------------------------
 # The following functions are used to implement the functionality.
+
+def irohaObject(idUsuario):
+    return Iroha(idUsuario)
 
 @trace
 def create_domain_and_asset(domainName, defaultRole, assetName, assetPrecision, irohaObject, signingPrivateKey):
