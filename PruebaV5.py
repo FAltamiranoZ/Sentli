@@ -35,6 +35,7 @@ ADMIN_PRIVATE_KEY = os.getenv(
 
 # The Iroha object allows us to use the Iroha library commands. Each account must have and use its own Iroha object
 iroha = Iroha(ADMIN_ACCOUNT_ID)
+print(iroha)
 
 # Here we created a key with the IrohaCrypto.private_key() method and we will assign it to user as a default value for testing
 # We are not creating any user here, just creating the keys.

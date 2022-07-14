@@ -8,13 +8,13 @@ def main(window, tipoInterfaz, idUsuario, irohaObject, signingPrivateKey):
 
     if tipoInterfaz == 'usuario':
         layout = [  [sg.Text('Bienvenido a tu portal Sentli')], 
-                    [sg.Button('Convertir pesos a Sentli', size=(50,1))], #Esta es la única funcionalidad que falta de crearse
+                    [sg.Button('Convertir pesos a Sentli', size=(50,1))],
                     [sg.Button('Transferir Sentli a otro usuario', size=(50,1))], 
                     [sg.Button('Consultar mi cantidad de Sentli actual', size=(50,1))], 
                     [sg.Button('Consultar todas mis transacciones de Sentli', size=(50,1))], 
                     [sg.Button('Consultar la información de mi cuenta', size=(50,1))], 
                     [sg.Button('Añadir llaves', size=(50,1))], 
-                    [sg.Button('Consultar mis llaves', size=(50,1))]
+                    [sg.Button('Consultar mis llaves', size=(50,1))],
                     [sg.Button('Salir')] 
                 ] 
     elif tipoInterfaz == 'administrador de dinero':

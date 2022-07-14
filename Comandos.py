@@ -298,6 +298,9 @@ def get_account_assets(accountId, irohaObject, signingPrivateKey):
     IrohaCrypto.sign_query(query, signingPrivateKey)
 
     response = net.send_query(query)
+    if response.transactions_page_response.all_transactions_size == 0:
+        print('There are no assets for this account')
+        return 'There are no assets for this account'
     data = response.account_assets_response.account_assets
     printableVariable = ""
     for asset in data:
