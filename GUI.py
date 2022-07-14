@@ -1,5 +1,6 @@
 import PySimpleGUI as sg
 import GUIWindows as gw
+import Comandos as cmd
 
 def main(window, tipoInterfaz, idUsuario, irohaObject, signingPrivateKey):
 
@@ -61,7 +62,7 @@ def main(window, tipoInterfaz, idUsuario, irohaObject, signingPrivateKey):
             case 'Eliminar un rol de una cuenta':
                 gw.eliminar_un_rol_de_una_cuenta_window(irohaObject, signingPrivateKey)
             case 'Consultar todos los roles activos':
-                gw.consultar_todos_los_roles_activos_window(irohaObject, signingPrivateKey)
+                sg.popup(cmd.get_roles(irohaObject, signingPrivateKey))
             case 'Consultar la información de una cuenta':
                 gw.consultar_la_informacion_de_una_cuenta_window(irohaObject, signingPrivateKey)
             case 'Modificar la información de una cuenta':
@@ -77,7 +78,7 @@ def main(window, tipoInterfaz, idUsuario, irohaObject, signingPrivateKey):
             case 'Eliminar un nodo':
                 gw.eliminar_un_nodo_window(idUsuario, irohaObject, signingPrivateKey)
             case 'Consultar todos los nodos activos':
-                gw.consultar_todos_los_nodos_activos_window(irohaObject, signingPrivateKey)
+                sg.popup(cmd.get_peers(idUsuario, irohaObject, signingPrivateKey))
             case 'Consultar información sobre una transacción':
                 gw.consultar_informacion_sobre_una_transaccion_window(irohaObject, signingPrivateKey)
             case 'Consultar información sobre varias transacciones':
@@ -89,11 +90,11 @@ def main(window, tipoInterfaz, idUsuario, irohaObject, signingPrivateKey):
             case 'Transferir Sentli a otro usuario':
                 gw.transferir_sentli_a_otro_usuario_window(idUsuario, irohaObject, signingPrivateKey)
             case 'Consultar mi cantidad de Sentli actual':
-                gw.consultar_mi_cantidad_de_sentli_actual_window(idUsuario, irohaObject, signingPrivateKey)
+                sg.popup(cmd.get_account_assets(idUsuario, irohaObject, signingPrivateKey))
             case 'Consultar todas mis transacciones de Sentli':
-                gw.consultar_todas_mis_transacciones_de_sentli_window(idUsuario, irohaObject, signingPrivateKey)
+                sg.popup(cmd.get_account_asset_transactions(idUsuario, 'sentli#domain', irohaObject, signingPrivateKey))
             case 'Consultar la información de mi cuenta':
-                gw.consultar_la_informacion_de_mi_cuenta_window(idUsuario, irohaObject, signingPrivateKey)
+                sg.popup(cmd.get_account_details(idUsuario, irohaObject, signingPrivateKey))
             case 'Añadir llaves':
                 gw.añadir_llaves_window(idUsuario, irohaObject, signingPrivateKey)
             case 'Añadir Sentli a mi cuenta':
