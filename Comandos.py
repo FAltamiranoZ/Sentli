@@ -109,7 +109,7 @@ def create_asset(domainName, assetName, assetPrecision, irohaObject, signingPriv
 
 
 @trace
-def add_asset(assetId, quantity, irohaObject, signingPrivateKey):
+def add_assets(assetId, quantity, irohaObject, signingPrivateKey):
     """
     Adds a certain quantity of units of the asset to the signing account
     """
@@ -241,6 +241,18 @@ def add_peer(accountID, addressAndPort, key, irohaObject, signingPrivateKey):
     tx = irohaObject.transaction([
             irohaObject.command('AddPeer', peer=peer1)
     ], creator_account=accountID, quorum=1)
+    IrohaCrypto.sign_transaction(tx, signingPrivateKey)
+    return send_transaction_and_print_status(tx)
+
+
+@trace
+def remove_peer(key, irohaObject, signingPrivateKey):
+    """
+    Removes a peer from the network
+    """
+    tx = irohaObject.transaction([
+            irohaObject.command('RemovePeer', public_key=key)
+    ])
     IrohaCrypto.sign_transaction(tx, signingPrivateKey)
     return send_transaction_and_print_status(tx)
     

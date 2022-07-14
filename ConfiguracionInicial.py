@@ -21,7 +21,7 @@ cmd.create_account('usertwo', 'domain', user_public_key2, iroha, ADMIN_PRIVATE_K
 #cmd.set_role('money_administrator@domain', 'money_creator', iroha, ADMIN_PRIVATE_KEY)
 #cmd.get_account('money_administrator@domain', iroha, ADMIN_PRIVATE_KEY)
 #money_administrator_iroha = cmd.irohaObject('money_administrator@domain')
-#cmd.add_asset('sentli#domain', '1000.00', money_administrator_iroha, money_administrator_private_key)
+#cmd.add_assets('sentli#domain', '1000.00', money_administrator_iroha, money_administrator_private_key)
 #cmd.get_account_assets('money_administrator@domain', iroha, ADMIN_PRIVATE_KEY)
 #cmd.substract_assets('sentli#domain', '1000.00', money_administrator_iroha, money_administrator_private_key)
 #cmd.get_account_assets('money_administrator@domain', iroha, ADMIN_PRIVATE_KEY)
