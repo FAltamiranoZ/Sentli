@@ -42,7 +42,6 @@ def asignar_un_rol_de_una_cuenta_window(irohaObject, signingPrivateKey):
             print('Hola')
     asignar_un_rol_de_una_cuenta_window.close()
 
-#Falta implementar esta funcionalidad
 def eliminar_un_rol_de_una_cuenta_window(irohaObject, signingPrivateKey):
     layout = [  
         [sg.Text('Escribe el nombre del usuario y dominio con formato "nombreUsuario@nombreDominio"'), sg.InputText(key='idUsuario')], 
@@ -255,7 +254,7 @@ def consultar_las_transacciones_de_una_cuenta_en_un_dominio_window(irohaObject, 
             print('Hola')
     consultar_las_transacciones_de_una_cuenta_en_un_dominio_window.close()
 
-#Falta implementar esta funcionalidad
+#Aquí hacer una llamada a transfer a los comandos de money administrator para que este se agregue a si mismo la cantidad especificada y luego haga una transacción a este usuario por esa cantidad
 def convertir_pesos_a_sentli_window(idUsuario, irohaObject, signingPrivateKey):
     layout = [  
         [sg.Text('Introduce la cantidad de pesos que deseas convertir en Sentli'), sg.InputText(key='cantidad')],
@@ -306,7 +305,6 @@ def transferir_sentli_a_otro_usuario_window(idUsuario, irohaObject, signingPriva
             print('Hola')
     transferir_sentli_a_otro_usuario_window.close()
 
-#Falta implementar esta funcionalidad
 def añadir_llaves_window(idUsuario, irohaObject, signingPrivateKey):
     layout = [  
         [sg.Text('Escribe la llave que desees añadir'), sg.InputText(key='llave')],
@@ -344,7 +342,6 @@ def añadir_sentli_a_mi_cuenta_window(idUsuario, irohaObject, signingPrivateKey)
             print('Hola')
     añadir_sentli_a_mi_cuenta_window.close()
 
-#Falta implementar esta funcionalidad
 def quitar_sentli_de_mi_cuenta_window(idUsuario, irohaObject, signingPrivateKey):
     layout = [  
         [sg.Text('Escribe la cantidad de sentli que deseas quitar utilizando dos decimales'), sg.InputText(key='cantidad')],

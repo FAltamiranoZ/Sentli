@@ -18,7 +18,6 @@ while True:
     if event == sg.WIN_CLOSED or event == 'Salir': 
         break 
     elif event == 'Iniciar sesión':
-        #Escribir acá lo del chequeo del inicio de sesión
         idUsuario = values['idUsuario']
         contraseña = values['contraseña']
         if idUsuario == 'admin@domain' and contraseña == 'admin':
