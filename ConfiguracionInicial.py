@@ -14,18 +14,3 @@ cmd.create_account('money_administrator', 'domain', money_administrator_public_k
 cmd.set_role('money_administrator@domain', 'money_creator', iroha, ADMIN_PRIVATE_KEY)
 cmd.create_account('userone', 'domain', user_public_key, iroha, ADMIN_PRIVATE_KEY)
 cmd.create_account('usertwo', 'domain', user_public_key2, iroha, ADMIN_PRIVATE_KEY)
-
-
-##tests:
-#cmd.create_account('money_administrator', 'domain', money_administrator_public_key, iroha, ADMIN_PRIVATE_KEY)
-#cmd.set_role('money_administrator@domain', 'money_creator', iroha, ADMIN_PRIVATE_KEY)
-#cmd.get_account('money_administrator@domain', iroha, ADMIN_PRIVATE_KEY)
-#money_administrator_iroha = cmd.irohaObject('money_administrator@domain')
-#cmd.add_assets('sentli#domain', '1000.00', money_administrator_iroha, money_administrator_private_key)
-#cmd.get_account_assets('money_administrator@domain', iroha, ADMIN_PRIVATE_KEY)
-#cmd.substract_assets('sentli#domain', '1000.00', money_administrator_iroha, money_administrator_private_key)
-#cmd.get_account_assets('money_administrator@domain', iroha, ADMIN_PRIVATE_KEY)
-#cmd.add_signatory('money_administrator@domain', user_public_key, money_administrator_iroha, money_administrator_private_key)
-#cmd.get_signatories('money_administrator@domain', iroha, ADMIN_PRIVATE_KEY)
-#cmd.detach_role('money_administrator@domain', 'money_creator', iroha, ADMIN_PRIVATE_KEY)
-#cmd.get_account('money_administrator@domain', iroha, ADMIN_PRIVATE_KEY)
