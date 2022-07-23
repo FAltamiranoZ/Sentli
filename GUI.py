@@ -23,6 +23,7 @@ def main(window, tipoInterfaz, idUsuario, irohaObject, signingPrivateKey):
                     [sg.Button('Consultar la información de una moneda', size=(50,1))], 
                     [sg.Button('Añadir Sentli a mi cuenta', size=(50,1))], 
                     [sg.Button('Quitar Sentli de mi cuenta', size=(50,1))], 
+                    [sg.Button('Consultar mi cantidad de Sentli actual', size=(50,1))], 
                     [sg.Button('Consultar la información de una cuenta', size=(50,1))], 
                     [sg.Button('Consultar las transacciones de Sentli de una cuenta', size=(50,1))], 
                     [sg.Button('Salir')] 
@@ -93,7 +94,7 @@ def main(window, tipoInterfaz, idUsuario, irohaObject, signingPrivateKey):
             case 'Consultar mi cantidad de Sentli actual':
                 sg.popup(cmd.get_account_assets(idUsuario, irohaObject, signingPrivateKey))
             case 'Consultar todas mis transacciones de Sentli':
-                sg.popup(cmd.get_account_asset_transactions(idUsuario, 'sentli#domain', irohaObject, signingPrivateKey))
+                sg.Print(cmd.get_account_asset_transactions(idUsuario, 'sentli#domain', irohaObject, signingPrivateKey))
             case 'Consultar la información de mi cuenta':
                 sg.popup(cmd.get_account_details(idUsuario, irohaObject, signingPrivateKey))
             case 'Añadir llaves':

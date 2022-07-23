@@ -1,7 +1,6 @@
 import PySimpleGUI as sg
 import Comandos as cmd
 
-#TODO: Cambiar todos los print('Hola') por la funcionalidad de Comandos.py e implementar las funcionalidades.
 def crear_una_cuenta_window(irohaObject, signingPrivateKey):
     layout = [  
         [sg.Text('Escribe el nombre del usuario'), sg.InputText(key='nombreUsuario')], 
@@ -123,7 +122,7 @@ def crear_una_moneda_window(irohaObject, signingPrivateKey):
             nombreMoneda = values['nombreMoneda']
             nombreDominio = values['nombreDominio']
             decimales = values['decimales']
-            sg.popup(cmd.create_asset(nombreDominio, nombreMoneda, decimales, irohaObject, signingPrivateKey))
+            sg.popup(cmd.create_asset(nombreDominio, nombreMoneda, int(decimales), irohaObject, signingPrivateKey))
     crear_una_moneda_window.close()
 
 def consultar_la_informacion_de_una_moneda_window(irohaObject, signingPrivateKey): 
@@ -204,7 +203,7 @@ def eliminar_un_nodo_window(idUsuario, irohaObject, signingPrivateKey):
 
 def consultar_informacion_sobre_una_transaccion_window(irohaObject, signingPrivateKey):
     layout = [  
-        [sg.Text('Escribe el hash la transaccion'), sg.InputText(key='hash')],
+        [sg.Text('Escribe el hash de la transaccion'), sg.InputText(key='hash')],
         [sg.Button('Confirmar')], 
         [sg.Button('Volver')] 
     ]
@@ -217,7 +216,9 @@ def consultar_informacion_sobre_una_transaccion_window(irohaObject, signingPriva
             break 
         elif event == 'Confirmar':
             hash = values['hash']
-            sg.popup(cmd.get_transaction_data(hash, irohaObject, signingPrivateKey))
+            hashArray = []
+            hashArray.append(hash)
+            sg.Print(cmd.get_transaction_data(hashArray, irohaObject, signingPrivateKey))
     consultar_informacion_sobre_una_transaccion_window.close()
 
 def consultar_informacion_sobre_varias_transacciones_window(irohaObject, signingPrivateKey):
@@ -235,7 +236,10 @@ def consultar_informacion_sobre_varias_transacciones_window(irohaObject, signing
             break 
         elif event == 'Confirmar':
             hashes = values['hashes']
-            sg.popup(cmd.get_transactions_data(hashes, irohaObject, signingPrivateKey))
+            hashArray = []
+            for hash in hashes.split(','):
+                hashArray.append(hash)
+            sg.Print(cmd.get_transactions_data(hashArray, irohaObject, signingPrivateKey))
     consultar_informacion_sobre_varias_transacciones_window.close()
 
 def consultar_las_transacciones_de_una_cuenta_en_un_dominio_window(irohaObject, signingPrivateKey):
@@ -253,7 +257,7 @@ def consultar_las_transacciones_de_una_cuenta_en_un_dominio_window(irohaObject, 
             break 
         elif event == 'Confirmar':
             idUsuario = values['idUsuario']
-            sg.popup(cmd.get_account_transactions(idUsuario, irohaObject, signingPrivateKey))
+            sg.Print(cmd.get_account_transactions(idUsuario, irohaObject, signingPrivateKey))
     consultar_las_transacciones_de_una_cuenta_en_un_dominio_window.close()
 
 #Aquí hacer una llamada a transfer a los comandos de money administrator para que este se agregue a si mismo la cantidad especificada y luego haga una transacción a este usuario por esa cantidad
@@ -265,6 +269,7 @@ def convertir_pesos_a_sentli_window(idUsuario, irohaObject, signingPrivateKey):
         [sg.Text('Número de tarjeta'), sg.InputText(key='numero')],
         [sg.Text('Fecha de expiración'), sg.InputText(key='fecha')],
         [sg.Text('CVV'), sg.InputText(key='cvv')],
+        [sg.Text('Al hacer clic en confirmar, aparecerán dos pantallas, favor de esperar a salir de esta ventana hasta que estas dos hayan aparecido')],
         [sg.Button('Confirmar')], 
         [sg.Button('Volver')] 
     ]
@@ -291,7 +296,7 @@ def transferir_sentli_a_otro_usuario_window(idUsuario, irohaObject, signingPriva
     layout = [  
         [sg.Text('Escribe el id del usuario que va a recibir los Sentli con formato "nombreUsuario@nombreDominio"'), sg.InputText(key='idUsuario2')],
         [sg.Text('Escribe la cantidad de sentli que deseas transferir utilizando dos decimales'), sg.InputText(key='cantidad')],
-        [sg.Text('Escribe la descripición de esta transacción'), sg.InputText(key='descripcion')],
+        [sg.Text('Escribe la descripción de esta transacción'), sg.InputText(key='descripcion')],
         [sg.Button('Confirmar')], 
         [sg.Button('Volver')] 
     ]
@@ -381,7 +386,7 @@ def consultar_las_transacciones_de_sentli_de_una_cuenta_window(irohaObject, sign
         elif event == 'Confirmar':
             idUsuario = values['idUsuario']
             idMoneda = 'sentli#domain'
-            sg.popup(cmd.get_account_asset_transactions(idUsuario, idMoneda, irohaObject, signingPrivateKey))
+            sg.Print(cmd.get_account_asset_transactions(idUsuario, idMoneda, irohaObject, signingPrivateKey))
     consultar_las_transacciones_de_sentli_de_una_cuenta_window.close()
 
 

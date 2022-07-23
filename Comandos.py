@@ -298,16 +298,15 @@ def get_account_assets(accountId, irohaObject, signingPrivateKey):
     IrohaCrypto.sign_query(query, signingPrivateKey)
 
     response = net.send_query(query)
-    if response.transactions_page_response.all_transactions_size == 0:
-        print('There are no assets for this account')
-        return 'There are no assets for this account'
     data = response.account_assets_response.account_assets
     printableVariable = ""
     for asset in data:
         temp = 'Asset id = {}, balance = {}'.format(
             asset.asset_id, asset.balance)
         printableVariable = printableVariable + str(temp) + "\n"
-        print(temp)
+    if(printableVariable == ""):
+        printableVariable = "No hay activos disponibles para esta cuenta"
+    print(printableVariable)
     return printableVariable
 
 
@@ -356,8 +355,8 @@ def get_account_transactions(accountId, irohaObject, signingPrivateKey):
     IrohaCrypto.sign_query(query, signingPrivateKey)
     response = net.send_query(query)
     if response.transactions_page_response.all_transactions_size == 0:
-        print('There are no transactions for this account')
-        return 'There are no transactions for this account'
+        print('Esta cuenta no ha realizado transacciones')
+        return 'Esta cuenta no ha realizado transacciones'
     else:
         result = 'tx_hash: {}'. format(response.transactions_page_response.next_tx_hash)
         print(result)
@@ -388,8 +387,8 @@ def get_account_asset_transactions(accountId, assetId, irohaObject, signingPriva
     IrohaCrypto.sign_query(query, signingPrivateKey)
     response = net.send_query(query)
     if response.transactions_page_response.all_transactions_size == 0:
-        print('There are no transactions of this particular asset for this account')
-        return 'There are no transactions of this particular asset for this account'
+        print('Esta cuenta no ha realizado transacciones con este activo')
+        return 'Esta cuenta no ha realizado transacciones con este activo'
     else:
         result = 'tx_hash: {}'. format(response.transactions_page_response.next_tx_hash)
         print(result)

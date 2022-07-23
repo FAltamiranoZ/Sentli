@@ -50,19 +50,19 @@ cmd.get_account_transactions('admin@domain', iroha, ADMIN_PRIVATE_KEY)
 print('\n Testing add_assets command \n')
 cmd.add_assets('sentli#domain', '1000.00', money_administrator_iroha, money_administrator_private_key)
 
-print('\n Testing transfer_asset_from_account_one_to_account_two command \n')
+print('\n transfer_asset_from_account_one_to_account_two command \n')
 cmd.transfer_asset_from_account_one_to_account_two('money_administrator@domain', 'userone@domain', 'sentli#domain', 'Funding of the account userone', '2.00', money_administrator_iroha, money_administrator_private_key)
 
-print('\n Testing get_account_assets query \n')
+print('\n get_account_assets query \n')
 cmd.get_account_assets('userone@domain', iroha, ADMIN_PRIVATE_KEY)
 
-print('\n Testing get_account_asset_transactions query \n')
+print('\n get_account_asset_transactions query \n')
 cmd.get_account_asset_transactions('money_administrator@domain', 'sentli#domain', iroha, ADMIN_PRIVATE_KEY)
 
-print('\n Testing add_signatory command \n')
+print('\n add_signatory command \n')
 cmd.add_signatory('money_administrator@domain', user_public_key, money_administrator_iroha, money_administrator_private_key)
 
-print('\n Testing get_signatories query \n')
+print('\n get_signatories query \n')
 cmd.get_signatories('money_administrator@domain', iroha, ADMIN_PRIVATE_KEY)
 
 print('\n Testing get_transaction_data query \n')
