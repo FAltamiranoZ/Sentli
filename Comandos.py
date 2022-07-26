@@ -12,8 +12,8 @@ import sys
 if sys.version_info[0] < 3:
     raise Exception('Python 3 or a more recent version is required.')
 
-#IROHA_HOST_ADDR = os.getenv('IROHA_HOST_ADDR', '192.168.1.83')
-IROHA_HOST_ADDR = os.getenv('IROHA_HOST_ADDR', '127.0.0.1')
+IROHA_HOST_ADDR = os.getenv('IROHA_HOST_ADDR', '201.137.78.154')
+#IROHA_HOST_ADDR = os.getenv('IROHA_HOST_ADDR', '127.0.0.1')
 IROHA_PORT = os.getenv('IROHA_PORT', '50051')
 
 net = IrohaGrpc('{}:{}'.format(IROHA_HOST_ADDR, IROHA_PORT))
