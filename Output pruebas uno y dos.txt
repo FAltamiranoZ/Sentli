@@ -1,0 +1,554 @@
+Testing create_account command: 
+
+        Entering "create_account"
+        Entering "send_transaction_and_print_status"
+Transaction hash = b'dc0b7763623ae3f75130f70928aff2832d10ec711a06ecfed26326efe7d68884', creator = admin@domain
+('ENOUGH_SIGNATURES_COLLECTED', 9, 0)
+('STATEFUL_VALIDATION_SUCCESS', 3, 0)
+('COMMITTED', 5, 0)
+        Leaving "send_transaction_and_print_status"
+        Leaving "create_account"
+
+ Testing set_role command
+
+        Entering "set_role"
+        Entering "send_transaction_and_print_status"
+Transaction hash = b'05d1c9fcc15481f7a09256e7499582ea3ce9abbdd3f1217b5b0c05b52b811a57', creator = admin@domain
+('ENOUGH_SIGNATURES_COLLECTED', 9, 0)
+('STATEFUL_VALIDATION_SUCCESS', 3, 0)
+('COMMITTED', 5, 0)
+        Leaving "send_transaction_and_print_status"
+        Leaving "set_role"
+
+ Testing detach_role command 
+
+        Entering "detach_role"
+        Entering "send_transaction_and_print_status"
+Transaction hash = b'81868e81e24ab29da970e8d83a66bf9c5492a295199698aa34d0e3c87451f3fb', creator = admin@domain
+('ENOUGH_SIGNATURES_COLLECTED', 9, 0)
+('STATEFUL_VALIDATION_SUCCESS', 3, 0)
+('COMMITTED', 5, 0)
+        Leaving "send_transaction_and_print_status"
+        Leaving "detach_role"
+
+ Variable setting for testing 
+
+        Entering "set_role"
+        Entering "send_transaction_and_print_status"
+Transaction hash = b'87f71c7dec642d28abef3af8fe00d3a20396448215137a4694ee72ab79b2b19c', creator = admin@domain
+('ENOUGH_SIGNATURES_COLLECTED', 9, 0)
+('STATEFUL_VALIDATION_SUCCESS', 3, 0)
+('COMMITTED', 5, 0)
+        Leaving "send_transaction_and_print_status"
+        Leaving "set_role"
+        Entering "create_account"
+        Entering "send_transaction_and_print_status"
+Transaction hash = b'b1b4d4e8e6a9de7c5b3e5c9a5e32f134be06a39d7b27df0cea2bdd9dcdcdbe27', creator = admin@domain
+('ENOUGH_SIGNATURES_COLLECTED', 9, 0)
+('STATEFUL_VALIDATION_SUCCESS', 3, 0)
+('COMMITTED', 5, 0)
+        Leaving "send_transaction_and_print_status"
+        Leaving "create_account"
+        Entering "create_account"
+        Entering "send_transaction_and_print_status"
+Transaction hash = b'a9d5063b5364c519f49f6b0b36842b745ee8a19888d4e23fd2bb4804981f2055', creator = admin@domain
+('ENOUGH_SIGNATURES_COLLECTED', 9, 0)
+('STATEFUL_VALIDATION_SUCCESS', 3, 0)
+('COMMITTED', 5, 0)
+        Leaving "send_transaction_and_print_status"
+        Leaving "create_account"
+
+ Testing get_roles query
+
+        Entering "get_roles"
+admin
+user
+money_creator
+        Leaving "get_roles"
+
+ Testing set_detail_to_account command
+
+        Entering "set_detail_to_account"
+        Entering "send_transaction_and_print_status"
+Transaction hash = b'd5ecca592dc32943328c93aece485b0a09299b8dc673f3b47dca5257ba68a2bf', creator = admin@domain
+('ENOUGH_SIGNATURES_COLLECTED', 9, 0)
+('STATEFUL_VALIDATION_SUCCESS', 3, 0)
+('COMMITTED', 5, 0)
+        Leaving "send_transaction_and_print_status"
+        Leaving "set_detail_to_account"
+
+ Testing get_account_details query
+
+        Entering "get_account_details"
+Account id = userone@domain, details = { "admin@domain" : { "age" : "18" } }
+        Leaving "get_account_details"
+
+ Testing create_domain command
+
+        Entering "create_domain"
+        Entering "send_transaction_and_print_status"
+Transaction hash = b'65540dd8d02c7b449d4740592ecf3e6a92cd08f33795e4409e675b869f0dc98e', creator = admin@domain
+('ENOUGH_SIGNATURES_COLLECTED', 9, 0)
+('STATEFUL_VALIDATION_SUCCESS', 3, 0)
+('COMMITTED', 5, 0)
+        Leaving "send_transaction_and_print_status"
+        Leaving "create_domain"
+
+ Testing create_asset command
+
+        Entering "create_asset"
+        Entering "send_transaction_and_print_status"
+Transaction hash = b'b5e7576a7097ac2b5a9dddbdd62c18b1e1be486f10cdeb8fadc8454a8e7239db', creator = admin@domain
+('ENOUGH_SIGNATURES_COLLECTED', 9, 0)
+('STATEFUL_VALIDATION_SUCCESS', 3, 0)
+('COMMITTED', 5, 0)
+        Leaving "send_transaction_and_print_status"
+        Leaving "create_asset"
+
+ Testing get_asset_info query
+
+        Entering "get_asset_info"
+Asset id = , precision = 0
+        Leaving "get_asset_info"
+
+ Testing get_account_transactions query
+
+        Entering "get_account_transactions"
+tx_hash: 05d1c9fcc15481f7a09256e7499582ea3ce9abbdd3f1217b5b0c05b52b811a57
+query_hash: "90220de51936ab7513e2dac7a4cca32a6bd79aa48d305d3dc8ad95e439408bed"
+transactions_page_response {
+  transactions {
+    payload {
+      reduced_payload {
+        commands {
+          create_account {
+            account_name: "money_administrator"
+            domain_id: "domain"
+            public_key: "8f58f80a61e05113be965402865b4db677adf674e8d7bbc6e54b33fe1c5a175f"
+          }
+        }
+        creator_account_id: "admin@domain"
+        created_time: 1658593942686
+        quorum: 1
+      }
+    }
+    signatures {
+      public_key: "313a07e6384776ed95447710d15e59148473ccfc052a681317a72a69f2a49910"
+      signature: "246d4142bdcdba171b76b7571a23e625148ba1080dbafb14b2e2dc65d1984377dd56effb35994e7726903bf42d77ad529d618cdaed20b9ac78b88377882a610b"
+    }
+  }
+  all_transactions_size: 9
+  next_tx_hash: "05d1c9fcc15481f7a09256e7499582ea3ce9abbdd3f1217b5b0c05b52b811a57"
+}
+
+tx_hash: 05d1c9fcc15481f7a09256e7499582ea3ce9abbdd3f1217b5b0c05b52b811a57
+query_hash: "b1642cb4bd65728d6f102a40cb3f6eb5b7c6b3986d522b6616626bc27f151f13"
+transactions_page_response {
+  transactions {
+    payload {
+      reduced_payload {
+        commands {
+          append_role {
+            account_id: "money_administrator@domain"
+            role_name: "money_creator"
+          }
+        }
+        creator_account_id: "admin@domain"
+        created_time: 1658593942743
+        quorum: 1
+      }
+    }
+    signatures {
+      public_key: "313a07e6384776ed95447710d15e59148473ccfc052a681317a72a69f2a49910"
+      signature: "90bc3a56f0bcaa5dfa0c455277e1f3a8f24d6af9a0d70237a8c3fe3ec70f4df48f306ad219f4c61cda796ef741e267d51c9d9ba82aa181ee704f1f4b227d8b05"
+    }
+  }
+  all_transactions_size: 9
+  next_tx_hash: "81868e81e24ab29da970e8d83a66bf9c5492a295199698aa34d0e3c87451f3fb"
+}
+
+tx_hash: 81868e81e24ab29da970e8d83a66bf9c5492a295199698aa34d0e3c87451f3fb
+query_hash: "57a748f6b7aec3b52441b176a30d8ef494e0c21460f4252c3b1b38c93b282a90"
+transactions_page_response {
+  transactions {
+    payload {
+      reduced_payload {
+        commands {
+          detach_role {
+            account_id: "money_administrator@domain"
+            role_name: "money_creator"
+          }
+        }
+        creator_account_id: "admin@domain"
+        created_time: 1658593945790
+        quorum: 1
+      }
+    }
+    signatures {
+      public_key: "313a07e6384776ed95447710d15e59148473ccfc052a681317a72a69f2a49910"
+      signature: "07546533e3f462263405ec3b14e93e3b08e07d2d33b603e31218c810bc5399d503476270faa80787cd691a63726833fc580b3af06293f759c61894db2da09b00"
+    }
+  }
+  all_transactions_size: 9
+  next_tx_hash: "87f71c7dec642d28abef3af8fe00d3a20396448215137a4694ee72ab79b2b19c"
+}
+
+tx_hash: 87f71c7dec642d28abef3af8fe00d3a20396448215137a4694ee72ab79b2b19c
+query_hash: "b116207053382e12dfc50aa01657872e5c3f8bf668610d2eca68fe13bc582f67"
+transactions_page_response {
+  transactions {
+    payload {
+      reduced_payload {
+        commands {
+          append_role {
+            account_id: "money_administrator@domain"
+            role_name: "money_creator"
+          }
+        }
+        creator_account_id: "admin@domain"
+        created_time: 1658593948840
+        quorum: 1
+      }
+    }
+    signatures {
+      public_key: "313a07e6384776ed95447710d15e59148473ccfc052a681317a72a69f2a49910"
+      signature: "ee24b749674aaf0913c831a93179fb72df7e0ce4cb19428193d04aba7077b0937802605dad1fa96164adf6a8ca3db3af81f1a2a4e44da4bf1a8e770646fda309"
+    }
+  }
+  all_transactions_size: 9
+  next_tx_hash: "b1b4d4e8e6a9de7c5b3e5c9a5e32f134be06a39d7b27df0cea2bdd9dcdcdbe27"
+}
+
+tx_hash: b1b4d4e8e6a9de7c5b3e5c9a5e32f134be06a39d7b27df0cea2bdd9dcdcdbe27
+query_hash: "491b4752c2f03ca2287750435539ceacc37f2c86d3d91f08eb28a86b40d50edc"
+transactions_page_response {
+  transactions {
+    payload {
+      reduced_payload {
+        commands {
+          create_account {
+            account_name: "userone"
+            domain_id: "domain"
+            public_key: "36b39e07810a0807a62ec23c135e77b4e707a7e2a683474550348b99803c12a5"
+          }
+        }
+        creator_account_id: "admin@domain"
+        created_time: 1658593951876
+        quorum: 1
+      }
+    }
+    signatures {
+      public_key: "313a07e6384776ed95447710d15e59148473ccfc052a681317a72a69f2a49910"
+      signature: "0df9929504b0528c6698daf29bdd6e3253346f429af51e8b8cb8efb482fe5cb4a195f105c00519af559bc28417a0f7d348102151fcacc36f20e55ac2704d720c"
+    }
+  }
+  all_transactions_size: 9
+  next_tx_hash: "a9d5063b5364c519f49f6b0b36842b745ee8a19888d4e23fd2bb4804981f2055"
+}
+
+tx_hash: a9d5063b5364c519f49f6b0b36842b745ee8a19888d4e23fd2bb4804981f2055
+query_hash: "7e69203ac168f3fa218341ca8c69041641cc0ea5de84bd7702b7b6e2b24d7abe"
+transactions_page_response {
+  transactions {
+    payload {
+      reduced_payload {
+        commands {
+          create_account {
+            account_name: "usertwo"
+            domain_id: "domain"
+            public_key: "f04037bf74f8cab4cad2be221cbd6219365c4830d0c596f84d7c9198666b927d"
+          }
+        }
+        creator_account_id: "admin@domain"
+        created_time: 1658593954927
+        quorum: 1
+      }
+    }
+    signatures {
+      public_key: "313a07e6384776ed95447710d15e59148473ccfc052a681317a72a69f2a49910"
+      signature: "67086d178812330fca90ac0734f9478fda9d2a63ea103652cfef989e3cf8d3b419ec8388eb86c03531658ab4904c48ada9792229d44049963464277e5750fd04"
+    }
+  }
+  all_transactions_size: 9
+  next_tx_hash: "d5ecca592dc32943328c93aece485b0a09299b8dc673f3b47dca5257ba68a2bf"
+}
+
+tx_hash: d5ecca592dc32943328c93aece485b0a09299b8dc673f3b47dca5257ba68a2bf
+query_hash: "8a5c30e1e4f5ee6e2ccff397defca1b0a7850d86ab4115d6124c87292f530b9f"
+transactions_page_response {
+  transactions {
+    payload {
+      reduced_payload {
+        commands {
+          set_account_detail {
+            account_id: "userone@domain"
+            key: "age"
+            value: "18"
+          }
+        }
+        creator_account_id: "admin@domain"
+        created_time: 1658593957997
+        quorum: 1
+      }
+    }
+    signatures {
+      public_key: "313a07e6384776ed95447710d15e59148473ccfc052a681317a72a69f2a49910"
+      signature: "b6c62651dd7d29faee678323dba206caa4ba649e74c41b82e76a383d1d310cec42f96f59babfbd9b2f10a89c3649cefcc4b7c0544d3a4f438892d99202670e04"
+    }
+  }
+  all_transactions_size: 9
+  next_tx_hash: "65540dd8d02c7b449d4740592ecf3e6a92cd08f33795e4409e675b869f0dc98e"
+}
+
+tx_hash: 65540dd8d02c7b449d4740592ecf3e6a92cd08f33795e4409e675b869f0dc98e
+query_hash: "db55b09f4442acaabf3497101226989d664e1887a9105817d0fb775aaae1af0d"
+transactions_page_response {
+  transactions {
+    payload {
+      reduced_payload {
+        commands {
+          create_domain {
+            domain_id: "testDomain"
+            default_role: "user"
+          }
+        }
+        creator_account_id: "admin@domain"
+        created_time: 1658593961041
+        quorum: 1
+      }
+    }
+    signatures {
+      public_key: "313a07e6384776ed95447710d15e59148473ccfc052a681317a72a69f2a49910"
+      signature: "e67fbcb754b436f2f0244b2d33d12a6931b882092c5dce9c743eac02d0477aaa5e069428b66ea4b014f68ad5cc6cb4bcf1a818094108d1dc9a76e5dfde73740b"
+    }
+  }
+  all_transactions_size: 9
+  next_tx_hash: "b5e7576a7097ac2b5a9dddbdd62c18b1e1be486f10cdeb8fadc8454a8e7239db"
+}
+
+tx_hash: b5e7576a7097ac2b5a9dddbdd62c18b1e1be486f10cdeb8fadc8454a8e7239db
+query_hash: "d46a4da28df8b1143ff5aaee178193287dcebee3b73dd4a188025ec0d8d44e26"
+transactions_page_response {
+  transactions {
+    payload {
+      reduced_payload {
+        commands {
+          create_asset {
+            asset_name: "testcoin"
+            domain_id: "testDomain"
+            precision: 2
+          }
+        }
+        creator_account_id: "admin@domain"
+        created_time: 1658593964081
+        quorum: 1
+      }
+    }
+    signatures {
+      public_key: "313a07e6384776ed95447710d15e59148473ccfc052a681317a72a69f2a49910"
+      signature: "a5dafa416b01067bbb459604d872ace0ccd6df4d0040a6ec4a4df7ab0bc279cbaa0323124bdfc6728a55bbe4c9e5f12c11aeaa198a2584ff478e2426e4c45202"
+    }
+  }
+  all_transactions_size: 9
+}
+
+        Leaving "get_account_transactions"
+
+ Testing add_assets command
+
+        Entering "add_assets"
+        Entering "send_transaction_and_print_status"
+Transaction hash = b'6a701b15aee580959e9bc113f257a1ca2f4612aed73b4cbe4ce7470317beb144', creator = money_administrator@domain
+('ENOUGH_SIGNATURES_COLLECTED', 9, 0)
+('STATEFUL_VALIDATION_SUCCESS', 3, 0)
+('COMMITTED', 5, 0)
+        Leaving "send_transaction_and_print_status"
+        Leaving "add_assets"
+
+ Testing transfer_asset_from_account_one_to_account_two command
+
+        Entering "transfer_asset_from_account_one_to_account_two"
+        Entering "send_transaction_and_print_status"
+Transaction hash = b'7a33c1e4cd0ecc6965a64fd483efa7432a938edbc9f7b040acfdc3cb67c139b7', creator = money_administrator@domain
+('ENOUGH_SIGNATURES_COLLECTED', 9, 0)
+('STATEFUL_VALIDATION_SUCCESS', 3, 0)
+('COMMITTED', 5, 0)
+        Leaving "send_transaction_and_print_status"
+        Leaving "transfer_asset_from_account_one_to_account_two"
+
+ Testing get_account_assets query
+
+        Entering "get_account_assets"
+Assed id = sentli#domain, balance = 2
+        Leaving "get_account_assets"
+
+ Testing get_account_asset_transactions query
+
+        Entering "get_account_asset_transactions"
+tx_hash: 
+query_hash: "dce4df240656ba25d0f4e9f5c8ed64bd18d47020529d60f58d5b3b99b30ba087"
+transactions_page_response {
+  transactions {
+    payload {
+      reduced_payload {
+        commands {
+          transfer_asset {
+            src_account_id: "money_administrator@domain"
+            dest_account_id: "userone@domain"
+            asset_id: "sentli#domain"
+            description: "Funding of the account userone"
+            amount: "2.00"
+          }
+        }
+        creator_account_id: "money_administrator@domain"
+        created_time: 1658593970176
+        quorum: 1
+      }
+    }
+    signatures {
+      public_key: "8f58f80a61e05113be965402865b4db677adf674e8d7bbc6e54b33fe1c5a175f"
+      signature: "c73b5f1e1e39e62ede40ba99681c8a2e5217f0c92ca99ce04a5accd33407dadf8beddc38a19da82815531d7d33b7f6f4ce9e70a57bed27c72df6996fd683fd0c"
+    }
+  }
+  all_transactions_size: 1
+}
+
+        Leaving "get_account_asset_transactions"
+
+ Testing add_signatory command
+
+        Entering "add_signatory"
+        Entering "send_transaction_and_print_status"
+Transaction hash = b'88cc38ad4c810336365620f62313540ed810abbe265d1a2579a849003c4cab8a', creator = money_administrator@domain
+('ENOUGH_SIGNATURES_COLLECTED', 9, 0)
+('STATEFUL_VALIDATION_SUCCESS', 3, 0)
+('COMMITTED', 5, 0)
+        Leaving "send_transaction_and_print_status"
+        Leaving "add_signatory"
+
+ Testing get_signatories query
+
+        Entering "get_signatories"
+signatories_response {
+  keys: "36b39e07810a0807a62ec23c135e77b4e707a7e2a683474550348b99803c12a5"
+  keys: "8f58f80a61e05113be965402865b4db677adf674e8d7bbc6e54b33fe1c5a175f"
+}
+query_hash: "a59cdc706bae13de9a3aaa4f51d5ea1fbdd72dd1bad6565abba610c471d8680c"
+
+        Leaving "get_signatories"
+
+ Testing add_peer command
+
+        Entering "add_peer"
+        Entering "send_transaction_and_print_status"
+Transaction hash = b'32ad06e772a39b62a4db0e626edfdf3bd9911f82bef3992c1f151d372658714d', creator = admin@domain
+('ENOUGH_SIGNATURES_COLLECTED', 9, 0)
+('STATEFUL_VALIDATION_SUCCESS', 3, 0)
+('COMMITTED', 5, 0)
+        Leaving "send_transaction_and_print_status"
+        Leaving "add_peer"
+
+ Testing get_peers query
+
+        Entering "get_peers"
+query_hash: "2e75662d8c4ecee67830350cf37fa59d1d5ae34c0e12ee52b982d98228924236"
+peers_response {
+  peers {
+    address: "201.137.130.149:10001"
+    peer_key: "bddd58404d1315e0eb27902c5d7c8eb0602c16238f005773df406bc191308928"
+  }
+  peers {
+    address: "127.0.0.1:10001"
+    peer_key: "bddd58404d1315e0eb27902c5d7c8eb0602c16238f005773df406bc191308929"
+  }
+}
+
+        Leaving "get_peers"
+
+ Testing remove_peer command
+
+        Entering "remove_peer"
+        Entering "send_transaction_and_print_status"
+Transaction hash = b'e9fc6053290c70ab0f40b09ae03b561983a0fbb552a96e24a978002e7d2d65ee', creator = admin@domain
+('ENOUGH_SIGNATURES_COLLECTED', 9, 0)
+('STATEFUL_VALIDATION_SUCCESS', 3, 0)
+('COMMITTED', 5, 0)
+        Leaving "send_transaction_and_print_status"
+        Leaving "remove_peer"
+
+ Testing get_transaction_data query
+
+        Entering "get_transaction_data"
+payload {
+  reduced_payload {
+    commands {
+      create_account {
+        account_name: "money_administrator"
+        domain_id: "domain"
+        public_key: "8f58f80a61e05113be965402865b4db677adf674e8d7bbc6e54b33fe1c5a175f"
+      }
+    }
+    creator_account_id: "admin@domain"
+    created_time: 1658594178935
+    quorum: 1
+  }
+}
+signatures {
+  public_key: "313a07e6384776ed95447710d15e59148473ccfc052a681317a72a69f2a49910"
+  signature: "9e568c4e21813facc627e8f459835a78cb5d3aa1aa010d0e74e0f525aac017bd55ae5ad4f2e28e8c31e1a3f66e33f6e03349ae15509e0e7a850e1a0e5fa7dd05"
+}
+
+        Leaving "get_transaction_data"
+
+ Testing get_transactions_data query
+
+        Entering "get_transactions_data"
+transactions_response {
+  transactions {
+    payload {
+      reduced_payload {
+        commands {
+          create_account {
+            account_name: "money_administrator"
+            domain_id: "domain"
+            public_key: "8f58f80a61e05113be965402865b4db677adf674e8d7bbc6e54b33fe1c5a175f"
+          }
+        }
+        creator_account_id: "admin@domain"
+        created_time: 1658594178935
+        quorum: 1
+      }
+    }
+    signatures {
+      public_key: "313a07e6384776ed95447710d15e59148473ccfc052a681317a72a69f2a49910"
+      signature: "9e568c4e21813facc627e8f459835a78cb5d3aa1aa010d0e74e0f525aac017bd55ae5ad4f2e28e8c31e1a3f66e33f6e03349ae15509e0e7a850e1a0e5fa7dd05"
+    }
+  }
+}
+query_hash: "ff7752a49e17024820b57f9d1e9084a52d6c37cd4f4d0438920796df2bba9b39"
+
+transactions_response {
+  transactions {
+    payload {
+      reduced_payload {
+        commands {
+          append_role {
+            account_id: "money_administrator@domain"
+            role_name: "money_creator"
+          }
+        }
+        creator_account_id: "admin@domain"
+        created_time: 1658594179356
+        quorum: 1
+      }
+    }
+    signatures {
+      public_key: "313a07e6384776ed95447710d15e59148473ccfc052a681317a72a69f2a49910"
+      signature: "ca4549a65897c2816e9f074d02c72f8ac5ee8f4f36a72a98c0f3a9e8e16e6e5246262cfefd6d52a0cb830f34b6b9416313b6259072b0b07939b8717e26ed600e"
+    }
+  }
+}
+query_hash: "9e72c6920cda438c4542a1287261f80b33316b68b85114c1917ff309c60bb3dd"
+
+        Leaving "get_transactions_data"
+
