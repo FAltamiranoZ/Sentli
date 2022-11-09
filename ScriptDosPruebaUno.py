@@ -29,12 +29,12 @@ cmd.get_account_details('pablo@domain', iroha, ADMIN_PRIVATE_KEY)
 
 #Pablo abona dinero a su cuenta para conseguir 100 Sentli y confirmamos que la transferencia es correcta
 cmd.transfer_asset_from_account_one_to_account_two('money_administrator@domain', 'pablo@domain', 'sentli#domain', 'Funding of the account Pablo', '2.00', money_administrator_iroha, money_administrator_private_key)
-cmd.get_account_assets('pablo@domain', iroha, ADMIN_PRIVATE_KEY)
+cmd.get_account_assets('pablo@domain', pablo_iroha, pablo_private_key)
 
 #Pablo le paga a Ivana su fruta y confirmamos el nuevo balance en ambas cuentas
 cmd.transfer_asset_from_account_one_to_account_two('pablo@domain', 'ivana@domain', 'sentli#domain', 'Pago de fruta', '74.00', pablo_iroha, pablo_private_key)
-cmd.get_account_assets('pablo@domain', iroha, ADMIN_PRIVATE_KEY)
-cmd.get_account_assets('ivana@domain', iroha, ADMIN_PRIVATE_KEY)
+cmd.get_account_assets('pablo@domain', pablo_iroha, '622e124e078333c58c644f5d107ac8a5c0002aeee222104411355ab10fc0faa8')
+cmd.get_account_assets('ivana@domain', ivana_iroha, '116eac80e88983cabb0b47bcf2be1c0a25222e6aa30ec43bd5dcc3144eaf4c60')
 
 
 
